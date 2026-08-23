@@ -7,79 +7,174 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body { color: #000000; scroll-behavior: smooth; }
-        .project-card { border: 1px solid #e5e7eb; transition: 0.3s; }
-        .project-card:hover { border-color: #3b82f6; transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+        body { font-family: 'Inter', sans-serif; color: #000000; scroll-behavior: smooth; }
+        .executive-card { 
+            border: 2px solid #f1f5f9;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .executive-card:hover { 
+            border-color: #2563eb; 
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at 10% 20%, rgba(240, 244, 255, 1) 0%, rgba(255, 255, 255, 1) 90%);
+        }
     </style>
 </head>
 <body class="bg-white">
 
-    <!-- Header / Nav -->
-    <nav class="sticky top-0 bg-white border-b border-gray-100 z-50 px-6 py-4 flex justify-between items-center">
-        <h1 class="text-xl font-black tracking-tighter">YOGITHA PRASAD</h1>
-        <div class="hidden md:flex space-x-8 font-bold text-sm uppercase">
-            <a href="#da-projects" class="hover:text-blue-600">Data Analytics</a>
-            <a href="#ml-projects" class="hover:text-blue-600">AI & ML</a>
-            <a href="https://linkedin.com/in/yogitha-prasad-2a96b9263/" target="_blank" class="hover:text-blue-600">LinkedIn</a>
-            <a href="https://github.com/yogithaprasad" target="_blank" class="hover:text-blue-600 text-blue-600">GitHub</a>
+    <!-- Navbar -->
+    <nav class="sticky top-0 bg-white/80 backdrop-blur-md border-b border-gray-100 z-50 px-8 py-5 flex justify-between items-center">
+        <h1 class="text-2xl font-900 tracking-tighter border-b-4 border-blue-600">YP.</h1>
+        <div class="hidden md:flex space-x-10 font-bold text-xs uppercase tracking-widest">
+            <a href="#da" class="hover:text-blue-600 transition">Analytics</a>
+            <a href="#ml" class="hover:text-blue-600 transition">AI & ML</a>
+            <a href="https://linkedin.com/in/yogitha-prasad-2a96b9263/" target="_blank" class="hover:text-blue-600 transition">LinkedIn</a>
+            <a href="https://github.com/yogithaprasad" target="_blank" class="bg-black text-white px-5 py-2 rounded-full hover:bg-blue-600 transition">GitHub</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="py-24 px-6 text-center border-b border-gray-50">
-        <h2 class="text-6xl font-black mb-6 tracking-tight">Full-Stack Data Analyst & <br><span class="text-blue-600">AI Engineer</span></h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto font-medium leading-relaxed">
-            Specializing in turning raw data into executive-level insights. Expert in <span class="text-black font-bold">SQL Engineering, Power BI Dashboards, and Predictive Machine Learning.</span>
-        </p>
-    </section>
+    <header class="hero-gradient py-32 px-6 border-b border-gray-50">
+        <div class="max-w-5xl mx-auto text-center">
+            <span class="bg-blue-100 text-blue-700 px-4 py-1 rounded-full text-xs font-black uppercase tracking-widest">Available for Roles</span>
+            <h2 class="text-7xl font-900 mb-8 tracking-tighter mt-6 leading-none">Data Analyst & <br><span class="text-blue-600">Analytics Engineer.</span></h2>
+            <p class="text-2xl text-gray-500 max-w-3xl mx-auto font-medium leading-relaxed">
+                Specializing in building end-to-end data pipelines and <span class="text-black font-bold">Executive Dashboards</span> that turn raw data into high-growth business decisions.
+            </p>
+            <div class="mt-12 flex justify-center space-x-6">
+                <a href="#da" class="bg-black text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-blue-600 shadow-xl transition">View My Work</a>
+                <a href="https://drive.google.com/file/d/1_RVv6GI122nSzMTvGlEKQ6C8IytAP9dR/view?usp=drive_link" target="_blank" class="border-2 border-black px-10 py-4 rounded-xl font-bold text-lg hover:bg-gray-50 transition">Download CV</a>
+            </div>
+        </div>
+    </header>
 
-    <!-- SECTION 1: DATA ANALYTICS (Featured) -->
-    <section id="da-projects" class="py-20 px-6 bg-gray-50">
+    <!-- FEATURED: DATA ANALYTICS -->
+    <section id="da" class="py-24 px-6 bg-white">
         <div class="max-w-6xl mx-auto">
-            <div class="flex items-center space-x-4 mb-12">
-                <h3 class="text-3xl font-black uppercase">Executive Data Analytics</h3>
-                <div class="h-1 flex-grow bg-blue-600"></div>
+            <div class="mb-16">
+                <h3 class="text-4xl font-900 uppercase tracking-tighter mb-2 italic">01. Executive Analytics</h3>
+                <p class="text-gray-400 font-bold uppercase tracking-widest text-sm">Core Data Analyst Projects</p>
             </div>
             
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Project 1 -->
-                <div class="project-card bg-white p-8 rounded-xl">
-                    <span class="text-xs font-black text-blue-600 uppercase tracking-widest">Power BI + DAX</span>
-                    <h4 class="text-2xl font-bold mt-2 mb-3">Executive Sales Performance</h4>
-                    <p class="text-gray-700 mb-6 font-medium">Built a CEO-level dashboard tracking $2M+ sales. Engineered custom DAX for YoY Growth and dynamic profit margin analysis.</p>
-                    <a href="https://github.com/yogithaprasad/Executive-Sales-Performance-BI" class="inline-block font-black border-b-2 border-black hover:text-blue-600 hover:border-blue-600">Case Study →</a>
+            <div class="grid md:grid-cols-2 gap-12">
+                
+                <!-- Card 1 -->
+                <div class="executive-card bg-white p-10 rounded-3xl">
+                    <div class="flex justify-between items-center mb-6">
+                        <div class="p-4 bg-blue-50 rounded-2xl text-blue-600 text-2xl"><i class="fa-solid fa-chart-pie"></i></div>
+                        <div class="flex space-x-2">
+                            <span class="text-[10px] font-black bg-gray-100 px-2 py-1 rounded italic uppercase">Power BI</span>
+                            <span class="text-[10px] font-black bg-gray-100 px-2 py-1 rounded italic uppercase">DAX</span>
+                        </div>
+                    </div>
+                    <h4 class="text-2xl font-900 mb-4 tracking-tight">Executive Sales Performance</h4>
+                    <p class="text-gray-600 mb-8 font-medium leading-relaxed">Financial dashboard tracking $2M+ sales. Implemented complex DAX measures for Year-over-Year (YoY) Growth and dynamic profit margin analysis.</p>
+                    <a href="https://github.com/yogithaprasad/Executive-Sales-Performance-BI" target="_blank" class="inline-flex items-center text-black font-black group">
+                        VIEW REPOSITORY <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-2 transition"></i>
+                    </a>
                 </div>
 
-                <!-- Project 2 -->
-                <div class="project-card bg-white p-8 rounded-xl">
-                    <span class="text-xs font-black text-green-600 uppercase tracking-widest">Advanced SQL</span>
-                    <h4 class="text-2xl font-bold mt-2 mb-3">Nashville Housing Engineering</h4>
-                    <p class="text-gray-700 mb-6 font-medium">Data cleaning of 56,000 records. Used CTEs, Self-Joins, and Window Functions to transform messy strings into atomic relational data.</p>
-                    <a href="https://github.com/yogithaprasad/Nashville-Housing-Data-Cleaning-SQL" class="inline-block font-black border-b-2 border-black hover:text-blue-600 hover:border-blue-600">SQL Logic →</a>
+                <!-- Card 2 -->
+                <div class="executive-card bg-white p-10 rounded-3xl">
+                    <div class="flex justify-between items-center mb-6">
+                        <div class="p-4 bg-green-50 rounded-2xl text-green-600 text-2xl"><i class="fa-solid fa-database"></i></div>
+                        <div class="flex space-x-2">
+                            <span class="text-[10px] font-black bg-gray-100 px-2 py-1 rounded italic uppercase">MySQL</span>
+                            <span class="text-[10px] font-black bg-gray-100 px-2 py-1 rounded italic uppercase">Engineering</span>
+                        </div>
+                    </div>
+                    <h4 class="text-2xl font-900 mb-4 tracking-tight">Nashville Housing Engineering</h4>
+                    <p class="text-gray-600 mb-8 font-medium leading-relaxed">Large-scale data cleaning of 56k property records. Utilized CTEs, Self-Joins, and Window Functions to normalize messy relational data.</p>
+                    <a href="https://github.com/yogithaprasad/Nashville-Housing-Data-Cleaning-SQL" target="_blank" class="inline-flex items-center text-black font-black group">
+                        VIEW REPOSITORY <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-2 transition"></i>
+                    </a>
                 </div>
 
-                <!-- Project 3 -->
-                <div class="project-card bg-white p-8 rounded-xl">
-                    <span class="text-xs font-black text-yellow-600 uppercase tracking-widest">Python + MySQL</span>
-                    <h4 class="text-2xl font-bold mt-2 mb-3">Retail Customer Insight Pipeline</h4>
-                    <p class="text-gray-700 mb-6 font-medium">Automated pipeline for retail trend analysis. Features median-imputation for missing data and demographic spend segmentation.</p>
-                    <a href="https://github.com/yogithaprasad/Retail-Customer-Behavior-Analysis" class="inline-block font-black border-b-2 border-black hover:text-blue-600 hover:border-blue-600">View Pipeline →</a>
+                <!-- Card 3 -->
+                <div class="executive-card bg-white p-10 rounded-3xl">
+                    <div class="flex justify-between items-center mb-6">
+                        <div class="p-4 bg-yellow-50 rounded-2xl text-yellow-600 text-2xl"><i class="fa-brands fa-python"></i></div>
+                        <div class="flex space-x-2">
+                            <span class="text-[10px] font-black bg-gray-100 px-2 py-1 rounded italic uppercase">Python</span>
+                            <span class="text-[10px] font-black bg-gray-100 px-2 py-1 rounded italic uppercase">ETL</span>
+                        </div>
+                    </div>
+                    <h4 class="text-2xl font-900 mb-4 tracking-tight">Retail Insight Pipeline</h4>
+                    <p class="text-gray-600 mb-8 font-medium leading-relaxed">End-to-end Python pipeline for consumer behavior. Includes automated data cleaning and demographic spending segmentation logic.</p>
+                    <a href="https://github.com/yogithaprasad/Retail-Customer-Behavior-Analysis" target="_blank" class="inline-flex items-center text-black font-black group">
+                        VIEW REPOSITORY <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-2 transition"></i>
+                    </a>
                 </div>
 
-                <!-- Project 4 -->
-                <div class="project-card bg-white p-8 rounded-xl">
-                    <span class="text-xs font-black text-purple-600 uppercase tracking-widest">Statistics</span>
-                    <h4 class="text-2xl font-bold mt-2 mb-3">Ecommerce A/B Testing</h4>
-                    <p class="text-gray-700 mb-6 font-medium">Statistical evaluation of 290k users. Implemented Z-tests and Logistic Regression to determine design conversion lift.</p>
-                    <a href="https://github.com/yogithaprasad/Ecommerce-AB-Testing-Regression" class="inline-block font-black border-b-2 border-black hover:text-blue-600 hover:border-blue-600">View Math →</a>
+                <!-- Card 4 -->
+                <div class="executive-card bg-white p-10 rounded-3xl">
+                    <div class="flex justify-between items-center mb-6">
+                        <div class="p-4 bg-purple-50 rounded-2xl text-purple-600 text-2xl"><i class="fa-solid fa-vial"></i></div>
+                        <div class="flex space-x-2">
+                            <span class="text-[10px] font-black bg-gray-100 px-2 py-1 rounded italic uppercase">Stats</span>
+                            <span class="text-[10px] font-black bg-gray-100 px-2 py-1 rounded italic uppercase">Hypothesis</span>
+                        </div>
+                    </div>
+                    <h4 class="text-2xl font-900 mb-4 tracking-tight">Ecommerce A/B Testing</h4>
+                    <p class="text-gray-600 mb-8 font-medium leading-relaxed">Statistical significance study for website variants. Applied Z-tests and Logistic Regression on 290k users to drive design decisions.</p>
+                    <a href="https://github.com/yogithaprasad/Ecommerce-AB-Testing-Regression-Analysis" target="_blank" class="inline-flex items-center text-black font-black group">
+                        VIEW REPOSITORY <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-2 transition"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- GRID: AI, ML & ENGINEERING -->
+    <section id="ml" class="py-24 px-6 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+            <div class="mb-16">
+                <h3 class="text-4xl font-900 uppercase tracking-tighter mb-2 italic">02. AI & Engineering</h3>
+                <p class="text-gray-400 font-bold uppercase tracking-widest text-sm">Deep Learning and Automation</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Simple Card 1 -->
+                <div class="bg-white p-8 rounded-2xl border border-gray-100 hover:border-blue-600 transition group">
+                    <h5 class="font-900 text-lg mb-2">CliniScan YOLOv8</h5>
+                    <p class="text-xs text-gray-500 font-bold uppercase mb-4 tracking-widest italic text-blue-600">Computer Vision</p>
+                    <p class="text-sm text-gray-600 mb-6 font-medium">Lung abnormality detection from chest X-rays with 95% accuracy.</p>
+                    <a href="https://github.com/yogithaprasad/CliniScan-Lung-Abnormality-Detection" target="_blank" class="text-xs font-black border-b-2 border-black pb-1 group-hover:text-blue-600 group-hover:border-blue-600">GITHUB REPO</a>
+                </div>
+
+                <!-- Simple Card 2 -->
+                <div class="bg-white p-8 rounded-2xl border border-gray-100 hover:border-blue-600 transition group">
+                    <h5 class="font-900 text-lg mb-2">Sentiment NLP</h5>
+                    <p class="text-xs text-gray-500 font-bold uppercase mb-4 tracking-widest italic text-blue-600">NLP / Naive Bayes</p>
+                    <p class="text-sm text-gray-600 mb-6 font-medium">Text classification for IMDB movie reviews identifying user sentiment.</p>
+                    <a href="https://github.com/yogithaprasad/Movie-review-sentiment-analysis" target="_blank" class="text-xs font-black border-b-2 border-black pb-1 group-hover:text-blue-600 group-hover:border-blue-600">GITHUB REPO</a>
+                </div>
+
+                <!-- Simple Card 3 -->
+                <div class="bg-white p-8 rounded-2xl border border-gray-100 hover:border-blue-600 transition group">
+                    <h5 class="font-900 text-lg mb-2">Lung Cancer Prediction</h5>
+                    <p class="text-xs text-gray-500 font-bold uppercase mb-4 tracking-widest italic text-blue-600">ML Benchmark</p>
+                    <p class="text-sm text-gray-600 mb-6 font-medium">Comparative study of 5 ML classifiers for medical diagnosis.</p>
+                    <a href="https://github.com/yogithaprasad/Comparative-Analysis-of-ML-Algorithms-for-Predicting-Lung-Cancer" target="_blank" class="text-xs font-black border-b-2 border-black pb-1 group-hover:text-blue-600 group-hover:border-blue-600">GITHUB REPO</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 2: AI & ML PROJECTS -->
-    <section id="ml-projects" class="py-20 px-6">
-        <div class="max-w-6xl mx-auto">
-            <div class="flex items-center space-x-4 mb-12">
-                <h3 class="text-3xl font-black uppercase text-gray-400">AI, ML & Extra Projects</h3>
-                <div class="h-1 flex-grow bg-gray-20
+    <!-- Footer -->
+    <footer class="py-32 border-t border-gray-100 text-center">
+        <h3 class="text-4xl font-900 mb-12 tracking-tighter">Ready to build something <br><span class="text-blue-600 underline">impactful?</span></h3>
+        <div class="flex justify-center space-x-12 mb-16">
+            <a href="mailto:yogithaprasad5@gmail.com" class="text-4xl hover:text-blue-600 transition"><i class="fa-solid fa-envelope"></i></a>
+            <a href="https://linkedin.com/in/yogitha-prasad-2a96b9263/" class="text-4xl hover:text-blue-600 transition"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://github.com/yogithaprasad" class="text-4xl hover:text-blue-600 transition"><i class="fa-brands fa-github"></i></a>
+        </div>
+        <p class="text-gray-400 font-black text-xs uppercase tracking-[0.3em]">© 2024 Yogitha Prasad | Analytics Portfolio</p>
+    </footer>
+
+</body>
+</html>
