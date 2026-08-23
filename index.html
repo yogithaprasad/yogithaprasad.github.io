@@ -3,125 +3,465 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yogitha Prasad | Data Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Yogitha Prasad | Data Analyst & Analytics Engineer</title>
+    <script src="https://cdn.tailwindcss.com">
+const particleRoot = document.querySelector('.hero-particles');
+if (particleRoot && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  for (let i = 0; i < 22; i++) {
+    const p = document.createElement('i');
+    p.style.left = `${Math.random() * 100}%`;
+    p.style.top = `${55 + Math.random() * 48}%`;
+    p.style.setProperty('--dx', `${(Math.random() - 0.5) * 160}px`);
+    p.style.animationDuration = `${5 + Math.random() * 7}s`;
+    p.style.animationDelay = `${Math.random() * -10}s`;
+    p.style.transform = `scale(${0.6 + Math.random() * 1.2})`;
+    particleRoot.appendChild(p);
+  }
+}
+
+</script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
-        body { font-family: 'Inter', sans-serif; color: #000000; scroll-behavior: smooth; }
-        .executive-card { 
-            border: 2px solid #f1f5f9;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .executive-card:hover { 
-            border-color: #2563eb; 
-            transform: translateY(-8px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-        }
-        .hero-gradient {
-            background: radial-gradient(circle at 10% 20%, rgba(240, 244, 255, 1) 0%, rgba(255, 255, 255, 1) 90%);
-        }
-    </style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+:root{
+  --ink:#0b1020;
+  --muted:#64748b;
+  --blue:#2563eb;
+  --blue2:#60a5fa;
+  --violet:#7c3aed;
+  --amber:#f59e0b;
+  --green:#16a34a;
+  --paper:#ffffff;
+  --mist:#f7f9fc;
+  --line:#e8edf5;
+  --shadow:0 20px 55px rgba(15,23,42,.09);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:'DM Sans',sans-serif;
+  color:var(--ink);
+  background:#fff;
+  overflow-x:hidden;
+}
+h1,h2,h3,h4,h5{
+  font-family:'Space Grotesk',sans-serif;
+  letter-spacing:-.035em;
+}
+.mono{font-family:'IBM Plex Mono',monospace}
+
+::selection{background:#dbeafe;color:#0b1020}
+
+.navbar{
+  position:sticky;top:0;z-index:100;
+  background:rgba(255,255,255,.84);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(226,232,240,.85);
+  padding:15px clamp(18px,4vw,48px);
+}
+.nav-inner{max-width:1180px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{
+  font-family:'Space Grotesk',sans-serif;font-size:1.55rem;font-weight:700;
+  letter-spacing:-.08em;border-bottom:4px solid var(--blue);padding-bottom:1px
+}
+.nav-links{display:flex;align-items:center;gap:28px}
+.nav-link{
+  position:relative;text-decoration:none;color:#475569;font-size:.74rem;
+  font-weight:700;text-transform:uppercase;letter-spacing:.13em
+}
+.nav-link:after{
+  content:"";position:absolute;left:0;bottom:-7px;width:0;height:2px;
+  background:var(--blue);transition:.25s
+}
+.nav-link:hover{color:var(--blue)}
+.nav-link:hover:after{width:100%}
+.nav-cta{
+  text-decoration:none;background:#0b1020;color:#fff!important;
+  padding:10px 16px;border-radius:999px;box-shadow:0 8px 20px rgba(11,16,32,.15)
+}
+.nav-cta:hover{background:var(--blue)}
+
+.hero{
+  position:relative;overflow:hidden;
+  padding:clamp(75px,10vw,125px) 22px 90px;
+  background:
+    radial-gradient(circle at 10% 10%,rgba(37,99,235,.13),transparent 34%),
+    radial-gradient(circle at 90% 80%,rgba(245,158,11,.10),transparent 30%),
+    #fff;
+  border-bottom:1px solid var(--line)
+}
+.hero:before{
+  content:"";position:absolute;inset:0;opacity:.42;pointer-events:none;
+  background-image:linear-gradient(rgba(15,23,42,.035) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(15,23,42,.035) 1px,transparent 1px);
+  background-size:56px 56px;
+  mask-image:radial-gradient(ellipse 70% 70% at 50% 25%,#000 25%,transparent 78%);
+}
+.hero-inner{position:relative;max-width:1120px;margin:auto;text-align:center}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:9px;padding:9px 14px;border-radius:999px;
+  background:#eff6ff;color:#1d4ed8;border:1px solid #dbeafe;
+  font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em
+}
+.hero h2{font-size:clamp(3.2rem,7vw,6.6rem);line-height:.94;margin:28px 0 22px}
+.hero h2 .accent{color:var(--blue)}
+.hero-copy{
+  max-width:760px;margin:auto;color:#64748b;font-size:clamp(1.05rem,2vw,1.35rem);
+  line-height:1.75
+}
+.hero-copy strong{color:var(--ink)}
+.hero-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:30px}
+.hero-btn{
+  display:inline-flex;align-items:center;gap:9px;padding:13px 19px;border-radius:12px;
+  text-decoration:none;font-weight:700;font-size:.88rem;transition:.25s
+}
+.hero-btn.primary{background:var(--ink);color:#fff}
+.hero-btn.secondary{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.hero-btn:hover{transform:translateY(-2px);box-shadow:0 12px 25px rgba(15,23,42,.10)}
+
+.section{padding:100px 22px}
+.section.alt{background:var(--mist)}
+.container{max-width:1180px;margin:auto}
+.section-head{margin-bottom:46px}
+.section-kicker{
+  color:var(--blue);font-size:.72rem;font-weight:700;letter-spacing:.16em;
+  text-transform:uppercase;margin-bottom:8px
+}
+.section h3{font-size:clamp(2rem,4vw,3.1rem);margin:0 0 8px}
+.section-sub{margin:0;color:#94a3b8;font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:.72rem}
+
+.project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.project-card{
+  position:relative;overflow:hidden;background:#fff;border:1px solid var(--line);
+  border-radius:24px;padding:30px;transition:.35s cubic-bezier(.22,1,.36,1)
+}
+.project-card:before{
+  content:"";position:absolute;inset:0;opacity:0;pointer-events:none;transition:.35s;
+  background:radial-gradient(480px circle at var(--mx,50%) var(--my,50%),rgba(37,99,235,.08),transparent 42%)
+}
+.project-card:hover{transform:translateY(-7px);border-color:#bfdbfe;box-shadow:var(--shadow)}
+.project-card:hover:before{opacity:1}
+.project-top{position:relative;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.project-icon{
+  width:52px;height:52px;border-radius:15px;display:grid;place-items:center;
+  background:#eff6ff;color:var(--blue);font-size:1.35rem
+}
+.project-icon.green{background:#f0fdf4;color:var(--green)}
+.project-icon.amber{background:#fffbeb;color:#d97706}
+.project-icon.violet{background:#f5f3ff;color:var(--violet)}
+.tags{display:flex;gap:7px;flex-wrap:wrap;margin:22px 0 13px}
+.tag{
+  padding:6px 9px;border-radius:7px;background:#f1f5f9;color:#475569;
+  font-size:.62rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase
+}
+.project-card h4{font-size:1.38rem;margin:0 0 10px}
+.project-card p{color:#64748b;line-height:1.7;margin:0 0 22px}
+.repo-link{
+  display:inline-flex;align-items:center;gap:8px;text-decoration:none;color:var(--ink);
+  font-weight:800;font-size:.76rem;letter-spacing:.08em;text-transform:uppercase
+}
+.repo-link span{transition:.2s}.repo-link:hover{color:var(--blue)}
+.repo-link:hover span{transform:translateX(5px)}
+
+.small-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.small-card{
+  background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px;
+  transition:.3s;min-height:225px;display:flex;flex-direction:column
+}
+.small-card:hover{transform:translateY(-6px);border-color:#bfdbfe;box-shadow:0 16px 35px rgba(15,23,42,.08)}
+.small-card h5{font-size:1.05rem;margin:0}
+.small-card .type{font-size:.61rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--blue);margin:10px 0 12px}
+.small-card p{font-size:.88rem;color:#64748b;line-height:1.65;flex:1;margin:0 0 18px}
+.small-card a{align-self:flex-start}
+
+.leetcode-card{
+  background:linear-gradient(135deg,#0b1020,#111827);color:#fff;border-radius:26px;
+  padding:42px;display:flex;align-items:center;justify-content:space-between;gap:32px;
+  overflow:hidden;position:relative;box-shadow:0 25px 60px rgba(15,23,42,.16)
+}
+.leetcode-card:after{
+  content:"";position:absolute;width:260px;height:260px;right:-80px;top:-100px;
+  border-radius:50%;border:1px solid rgba(255,255,255,.12);box-shadow:0 0 0 35px rgba(255,255,255,.025),0 0 0 70px rgba(255,255,255,.018)
+}
+.leetcode-card h4{font-size:1.65rem;margin:0 0 8px}
+.leetcode-card p{color:#cbd5e1;line-height:1.7;max-width:650px;margin:0}
+.leetcode-btn{
+  position:relative;z-index:2;white-space:nowrap;text-decoration:none;
+  background:var(--amber);color:#111827;padding:13px 18px;border-radius:12px;
+  font-weight:800;font-size:.76rem;letter-spacing:.08em;text-transform:uppercase
+}
+.leetcode-btn:hover{background:#fff}
+
+.footer{padding:90px 22px 42px;border-top:1px solid var(--line);text-align:center}
+.footer h3{font-size:clamp(2.2rem,5vw,4rem);margin:0 0 30px}
+.footer h3 span{color:var(--blue);text-decoration:underline;text-underline-offset:8px}
+.socials{display:flex;justify-content:center;gap:14px;margin:28px 0}
+.social{
+  width:48px;height:48px;border-radius:50%;display:grid;place-items:center;
+  border:1px solid var(--line);color:var(--ink);text-decoration:none;transition:.25s
+}
+.social:hover{background:var(--ink);color:#fff;transform:translateY(-3px)}
+.email{color:#64748b;text-decoration:none;font-size:.88rem}
+.email:hover{color:var(--blue)}
+.copyright{margin-top:36px;color:#94a3b8;font-size:.65rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+
+@media(max-width:900px){
+  .nav-links{gap:15px}.small-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:700px){
+  .nav-links .optional{display:none}
+  .nav-links{gap:10px}.nav-link{font-size:.62rem}
+  .nav-cta{padding:9px 12px}
+  .project-grid,.small-grid{grid-template-columns:1fr}
+  .section{padding:72px 18px}
+  .leetcode-card{padding:30px;flex-direction:column;align-items:flex-start}
+  .hero{padding-top:70px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+
+/* --- visual motion upgrade --- */
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;
+  background:linear-gradient(90deg,transparent,rgba(37,99,235,.025),transparent);
+  transform:translateX(-100%);animation:pageSweep 8s ease-in-out infinite;
+}
+@keyframes pageSweep{0%,72%{transform:translateX(-100%)}88%,100%{transform:translateX(100%)}}
+
+.logo{transition:transform .35s ease,letter-spacing .35s ease}
+.logo:hover{transform:translateY(-2px) rotate(-3deg);letter-spacing:-.02em}
+
+.hero:after{
+  content:"";position:absolute;width:420px;height:420px;border-radius:50%;
+  right:-180px;top:-150px;border:1px solid rgba(37,99,235,.10);
+  box-shadow:0 0 0 38px rgba(37,99,235,.025),0 0 0 78px rgba(37,99,235,.018);
+  animation:orbitGlow 7s ease-in-out infinite;
+  pointer-events:none;
+}
+@keyframes orbitGlow{
+  0%,100%{transform:translate(0,0) rotate(0deg)}
+  50%{transform:translate(-25px,25px) rotate(12deg)}
+}
+
+.eyebrow{
+  animation:eyebrowFloat 4s ease-in-out infinite;
+}
+@keyframes eyebrowFloat{
+  0%,100%{transform:translateY(0);box-shadow:0 0 0 rgba(37,99,235,0)}
+  50%{transform:translateY(-4px);box-shadow:0 10px 28px rgba(37,99,235,.10)}
+}
+
+.hero h2{
+  animation:heroReveal 1s cubic-bezier(.22,1,.36,1) both;
+}
+@keyframes heroReveal{
+  from{opacity:0;transform:translateY(25px) scale(.98)}
+  to{opacity:1;transform:none}
+}
+.hero-copy{animation:heroCopy .9s .15s cubic-bezier(.22,1,.36,1) both}
+.hero-actions{animation:heroCopy .9s .3s cubic-bezier(.22,1,.36,1) both}
+@keyframes heroCopy{
+  from{opacity:0;transform:translateY(16px)}
+  to{opacity:1;transform:none}
+}
+
+.project-icon{
+  transition:transform .4s cubic-bezier(.34,1.56,.64,1),box-shadow .35s;
+}
+.project-card:hover .project-icon{
+  transform:translateY(-5px) rotate(-5deg) scale(1.08);
+  box-shadow:0 12px 25px rgba(37,99,235,.14);
+}
+.project-card:nth-child(2):hover .project-icon{transform:translateY(-5px) rotate(5deg) scale(1.08)}
+.project-card:nth-child(3):hover .project-icon{transform:translateY(-5px) rotate(-7deg) scale(1.08)}
+.project-card:nth-child(4):hover .project-icon{transform:translateY(-5px) rotate(7deg) scale(1.08)}
+
+.tag{transition:transform .2s,background .2s}
+.project-card:hover .tag{transform:translateY(-2px)}
+.project-card:hover .tag:nth-child(2){transition-delay:.04s}
+
+.small-card{position:relative;overflow:hidden}
+.small-card:after{
+  content:"";position:absolute;width:90px;height:90px;border-radius:50%;
+  right:-35px;bottom:-35px;border:1px solid rgba(37,99,235,.10);
+  transition:transform .5s ease,opacity .5s;
+}
+.small-card:hover:after{transform:scale(2.4);opacity:.45}
+
+.small-card h5{transition:color .25s,transform .25s}
+.small-card:hover h5{color:var(--blue);transform:translateX(3px)}
+
+.leetcode-card{
+  animation:darkFloat 6s ease-in-out infinite;
+}
+@keyframes darkFloat{
+  0%,100%{box-shadow:0 25px 60px rgba(15,23,42,.16)}
+  50%{box-shadow:0 32px 75px rgba(15,23,42,.22)}
+}
+
+.leetcode-btn{transition:transform .25s,box-shadow .25s,background .25s}
+.leetcode-btn:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 12px 25px rgba(245,158,11,.18)}
+
+.social{position:relative;overflow:hidden}
+.social:before{
+  content:"";position:absolute;inset:0;border-radius:inherit;
+  background:radial-gradient(circle at 50% 120%,rgba(37,99,235,.18),transparent 55%);
+  transform:translateY(100%);transition:transform .35s
+}
+.social:hover:before{transform:translateY(0)}
+.social>*{position:relative}
+
+.footer h3{animation:footerPulse 5s ease-in-out infinite}
+@keyframes footerPulse{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-3px)}
+}
+
+/* animated gradient text */
+#typewriter{
+  background:linear-gradient(90deg,#2563eb,#7c3aed,#2563eb);
+  background-size:200% auto;
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:gradientText 4s linear infinite;
+}
+@keyframes gradientText{to{background-position:200% center}}
+
+@media(prefers-reduced-motion:reduce){
+  body::before,.hero:after,.eyebrow,.hero h2,.hero-copy,.hero-actions,
+  .leetcode-card,.footer h3,#typewriter{animation:none!important}
+}
+
+
+.hero-particles{
+  position:absolute;inset:0;overflow:hidden;pointer-events:none;opacity:.75;
+}
+.hero-particles i{
+  position:absolute;width:5px;height:5px;border-radius:50%;
+  background:#93c5fd;box-shadow:0 0 12px rgba(37,99,235,.35);
+  animation:particleDrift linear infinite;
+}
+@keyframes particleDrift{
+  0%{transform:translate3d(0,20px,0);opacity:0}
+  12%{opacity:.75}
+  85%{opacity:.5}
+  100%{transform:translate3d(var(--dx),-110px,0);opacity:0}
+}
+
+</style>
 </head>
 <body class="bg-white">
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="#" class="logo" aria-label="Yogitha Prasad home">YP</a>
+    <div class="nav-links">
+      <a href="#da" class="nav-link">Analytics</a>
+      <a href="#ml" class="nav-link optional">AI &amp; ML</a>
+      <a href="#lc" class="nav-link optional">LeetCode</a>
+      <a href="https://www.linkedin.com/in/yogitha-prasad-2a96b9263/" target="_blank" rel="noopener noreferrer" class="nav-link">LinkedIn</a>
+      <a href="https://github.com/yogithaprasad" target="_blank" rel="noopener noreferrer" class="nav-cta">GitHub ↗</a>
+    </div>
+  </div>
+</nav>
+<header class="hero">
+  
+<div class="hero-particles" aria-hidden="true"></div>
 
-    <!-- Navbar -->
-    <nav class="sticky top-0 bg-white/80 backdrop-blur-md border-b border-gray-100 z-50 px-8 py-5 flex justify-between items-center">
-        <h1 class="text-2xl font-900 tracking-tighter border-b-4 border-blue-600">YP.</h1>
-        <div class="hidden md:flex space-x-10 font-bold text-xs uppercase tracking-widest">
-            <a href="#da" class="hover:text-blue-600 transition">Analytics</a>
-            <a href="#ml" class="hover:text-blue-600 transition">AI & ML</a>
-            <a href="https://linkedin.com/in/yogitha-prasad-2a96b9263/" target="_blank" class="hover:text-blue-600 transition">LinkedIn</a>
-            <a href="https://github.com/yogithaprasad" target="_blank" class="bg-black text-white px-5 py-2 rounded-full hover:bg-blue-600 transition">GitHub</a>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <header class="hero-gradient py-32 px-6 border-b border-gray-50">
-        <div class="max-w-5xl mx-auto text-center">
-            <span class="bg-blue-100 text-blue-700 px-4 py-1 rounded-full text-xs font-black uppercase tracking-widest">Available for Roles</span>
-            <h2 class="text-7xl font-900 mb-8 tracking-tighter mt-6 leading-none">Data Analyst & <br><span class="text-blue-600">Analytics Engineer.</span></h2>
-            <p class="text-2xl text-gray-500 max-w-3xl mx-auto font-medium leading-relaxed">
-                Specializing in building end-to-end data pipelines and <span class="text-black font-bold">Executive Dashboards</span> that turn raw data into high-growth business decisions.
-            </p>
-            <div class="mt-12 flex justify-center space-x-6">
-                <a href="#da" class="bg-black text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-blue-600 shadow-xl transition">View My Work</a>
-                <a href="https://drive.google.com/file/d/1_RVv6GI122nSzMTvGlEKQ6C8IytAP9dR/view?usp=drive_link" target="_blank" class="border-2 border-black px-10 py-4 rounded-xl font-bold text-lg hover:bg-gray-50 transition">Download CV</a>
-            </div>
-        </div>
-    </header>
+<div class="hero-inner">
+    <div class="eyebrow">⌁ Data Analyst · Analytics Engineer</div>
+    <h2>I turn raw data<br>into <span class="accent" id="typewriter">decisions.</span></h2>
+    <p class="hero-copy">
+      Pipelines, dashboards and models that hold up under real business questions —
+      <strong>built end-to-end, shipped, and used.</strong>
+    </p>
+    <div class="hero-actions">
+      <a href="#da" class="hero-btn primary">Explore projects ↓</a>
+      <a href="https://github.com/yogithaprasad" target="_blank" rel="noopener noreferrer" class="hero-btn secondary">GitHub profile ↗</a>
+      <a href="mailto:yogithaprasad5@gmail.com" class="hero-btn secondary">Contact me</a>
+    </div>
+  </div>
+</header>
 
     <!-- FEATURED: DATA ANALYTICS -->
-    <section id="da" class="py-24 px-6 bg-white">
-        <div class="max-w-6xl mx-auto">
-            <div class="mb-16">
+    <section id="da" class="section">
+        <div class="container">
+            <div class="reveal section-head">
                 <h3 class="text-4xl font-900 uppercase tracking-tighter mb-2 italic">01. Executive Analytics</h3>
-                <p class="text-gray-400 font-bold uppercase tracking-widest text-sm">Core Data Analyst Projects</p>
+                <p class="text-gray-400 font-bold uppercase tracking-widest text-sm mono">Core Data Analyst Projects</p>
             </div>
-            
-            <div class="grid md:grid-cols-2 gap-12">
-                
+
+            <div class="project-grid">
+
                 <!-- Card 1 -->
-                <div class="executive-card bg-white p-10 rounded-3xl">
+                <div class="reveal project-card">
                     <div class="flex justify-between items-center mb-6">
-                        <div class="p-4 bg-blue-50 rounded-2xl text-blue-600 text-2xl"><i class="fa-solid fa-chart-pie"></i></div>
-                        <div class="flex space-x-2">
-                            <span class="text-[10px] font-black bg-gray-100 px-2 py-1 rounded italic uppercase">Power BI</span>
-                            <span class="text-[10px] font-black bg-gray-100 px-2 py-1 rounded italic uppercase">DAX</span>
-                        </div>
+                        <div class="project-icon">◔</div>
+                        
+                    </div>
+                    <div class="tags">
+                        <span class="tag">Power BI</span>
+                        <span class="tag">DAX</span>
                     </div>
                     <h4 class="text-2xl font-900 mb-4 tracking-tight">Executive Sales Performance</h4>
                     <p class="text-gray-600 mb-8 font-medium leading-relaxed">Financial dashboard tracking $2M+ sales. Implemented complex DAX measures for Year-over-Year (YoY) Growth and dynamic profit margin analysis.</p>
-                    <a href="https://github.com/yogithaprasad/Executive-Sales-Performance-BI" target="_blank" class="inline-flex items-center text-black font-black group">
-                        VIEW REPOSITORY <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-2 transition"></i>
+                    <a href="https://github.com/yogithaprasad/Executive-Sales-Performance-Dashboard" target="_blank" rel="noopener noreferrer" class="repo-link">
+                        VIEW REPOSITORY <span>↗</span><svg class="inline-svg-icon ml-2 group-hover:translate-x-2 transition" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.15em"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
                     </a>
                 </div>
 
                 <!-- Card 2 -->
-                <div class="executive-card bg-white p-10 rounded-3xl">
+                <div class="reveal project-card">
                     <div class="flex justify-between items-center mb-6">
-                        <div class="p-4 bg-green-50 rounded-2xl text-green-600 text-2xl"><i class="fa-solid fa-database"></i></div>
-                        <div class="flex space-x-2">
-                            <span class="text-[10px] font-black bg-gray-100 px-2 py-1 rounded italic uppercase">MySQL</span>
-                            <span class="text-[10px] font-black bg-gray-100 px-2 py-1 rounded italic uppercase">Engineering</span>
-                        </div>
+                        <div class="project-icon green">▣</div>
+                        
+                    </div>
+                    <div class="tags">
+                        <span class="tag">MySQL</span>
+                        <span class="tag">Engineering</span>
                     </div>
                     <h4 class="text-2xl font-900 mb-4 tracking-tight">Nashville Housing Engineering</h4>
                     <p class="text-gray-600 mb-8 font-medium leading-relaxed">Large-scale data cleaning of 56k property records. Utilized CTEs, Self-Joins, and Window Functions to normalize messy relational data.</p>
-                    <a href="https://github.com/yogithaprasad/Nashville-Housing-Data-Cleaning-SQL" target="_blank" class="inline-flex items-center text-black font-black group">
-                        VIEW REPOSITORY <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-2 transition"></i>
+                    <a href="https://github.com/yogithaprasad/Nashville-Housing-Data-Cleaning-SQL" target="_blank" rel="noopener noreferrer" class="repo-link">
+                        VIEW REPOSITORY <span>↗</span><svg class="inline-svg-icon ml-2 group-hover:translate-x-2 transition" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.15em"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
                     </a>
                 </div>
 
                 <!-- Card 3 -->
-                <div class="executive-card bg-white p-10 rounded-3xl">
+                <div class="reveal project-card">
                     <div class="flex justify-between items-center mb-6">
-                        <div class="p-4 bg-yellow-50 rounded-2xl text-yellow-600 text-2xl"><i class="fa-brands fa-python"></i></div>
-                        <div class="flex space-x-2">
-                            <span class="text-[10px] font-black bg-gray-100 px-2 py-1 rounded italic uppercase">Python</span>
-                            <span class="text-[10px] font-black bg-gray-100 px-2 py-1 rounded italic uppercase">ETL</span>
-                        </div>
+                        <div class="project-icon amber">↗</div>
+                        
+                    </div>
+                    <div class="tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">ETL</span>
                     </div>
                     <h4 class="text-2xl font-900 mb-4 tracking-tight">Retail Insight Pipeline</h4>
                     <p class="text-gray-600 mb-8 font-medium leading-relaxed">End-to-end Python pipeline for consumer behavior. Includes automated data cleaning and demographic spending segmentation logic.</p>
-                    <a href="https://github.com/yogithaprasad/Retail-Customer-Behavior-Analysis" target="_blank" class="inline-flex items-center text-black font-black group">
-                        VIEW REPOSITORY <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-2 transition"></i>
+                    <a href="https://github.com/yogithaprasad/Retail-Customer-Behavior-Analysis" target="_blank" rel="noopener noreferrer" class="repo-link">
+                        VIEW REPOSITORY <span>↗</span><svg class="inline-svg-icon ml-2 group-hover:translate-x-2 transition" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.15em"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
                     </a>
                 </div>
 
                 <!-- Card 4 -->
-                <div class="executive-card bg-white p-10 rounded-3xl">
+                <div class="reveal project-card">
                     <div class="flex justify-between items-center mb-6">
-                        <div class="p-4 bg-purple-50 rounded-2xl text-purple-600 text-2xl"><i class="fa-solid fa-vial"></i></div>
-                        <div class="flex space-x-2">
-                            <span class="text-[10px] font-black bg-gray-100 px-2 py-1 rounded italic uppercase">Stats</span>
-                            <span class="text-[10px] font-black bg-gray-100 px-2 py-1 rounded italic uppercase">Hypothesis</span>
-                        </div>
+                        <div class="project-icon violet">⌁</div>
+                        
+                    </div>
+                    <div class="tags">
+                        <span class="tag">Stats</span>
+                        <span class="tag">Hypothesis</span>
                     </div>
                     <h4 class="text-2xl font-900 mb-4 tracking-tight">Ecommerce A/B Testing</h4>
                     <p class="text-gray-600 mb-8 font-medium leading-relaxed">Statistical significance study for website variants. Applied Z-tests and Logistic Regression on 290k users to drive design decisions.</p>
-                    <a href="https://github.com/yogithaprasad/Ecommerce-AB-Testing-Regression-Analysis" target="_blank" class="inline-flex items-center text-black font-black group">
-                        VIEW REPOSITORY <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-2 transition"></i>
+                    <a href="https://github.com/yogithaprasad/Ecommerce-AB-Testing-Regression-Analysis" target="_blank" rel="noopener noreferrer" class="repo-link">
+                        VIEW REPOSITORY <span>↗</span><svg class="inline-svg-icon ml-2 group-hover:translate-x-2 transition" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.15em"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
                     </a>
                 </div>
 
@@ -130,51 +470,144 @@
     </section>
 
     <!-- GRID: AI, ML & ENGINEERING -->
-    <section id="ml" class="py-24 px-6 bg-gray-50">
-        <div class="max-w-6xl mx-auto">
-            <div class="mb-16">
+    <section id="ml" class="section alt">
+        <div class="container">
+            <div class="reveal section-head">
                 <h3 class="text-4xl font-900 uppercase tracking-tighter mb-2 italic">02. AI & Engineering</h3>
-                <p class="text-gray-400 font-bold uppercase tracking-widest text-sm">Deep Learning and Automation</p>
+                <p class="text-gray-400 font-bold uppercase tracking-widest text-sm mono">Deep Learning and Automation</p>
             </div>
-            
-            <div class="grid md:grid-cols-3 gap-6">
+
+            <div class="small-grid">
+                <!-- Simple Card 0 -->
+                <div class="reveal small-card">
+                    <div class="flex justify-between items-start mb-2">
+                        <h5 class="font-900 text-lg">Project Samarth</h5>
+                        
+                    </div>
+                    <p class="mono text-xs text-gray-500 font-bold uppercase mb-4 tracking-widest text-blue-600">AI / Q&A System</p>
+                    <p class="text-sm text-gray-600 mb-6 font-medium">An intelligent Q&A system for Indian agricultural and climate data.</p>
+                    <a href="https://github.com/yogithaprasad/Project-Samarth" target="_blank" rel="noopener noreferrer" class="repo-link">GITHUB REPO <span>↗</span></a>
+                </div>
+
                 <!-- Simple Card 1 -->
-                <div class="bg-white p-8 rounded-2xl border border-gray-100 hover:border-blue-600 transition group">
-                    <h5 class="font-900 text-lg mb-2">CliniScan YOLOv8</h5>
-                    <p class="text-xs text-gray-500 font-bold uppercase mb-4 tracking-widest italic text-blue-600">Computer Vision</p>
+                <div class="reveal small-card">
+                    <div class="flex justify-between items-start mb-2">
+                        <h5 class="font-900 text-lg">CliniScan YOLOv8</h5>
+                        
+                    </div>
+                    <p class="mono text-xs text-gray-500 font-bold uppercase mb-4 tracking-widest text-blue-600">Computer Vision</p>
                     <p class="text-sm text-gray-600 mb-6 font-medium">Lung abnormality detection from chest X-rays with 95% accuracy.</p>
-                    <a href="https://github.com/yogithaprasad/CliniScan-Lung-Abnormality-Detection" target="_blank" class="text-xs font-black border-b-2 border-black pb-1 group-hover:text-blue-600 group-hover:border-blue-600">GITHUB REPO</a>
+                    <a href="https://github.com/yogithaprasad/CliniScan-Lung-Abnormality-Detection" target="_blank" rel="noopener noreferrer" class="repo-link">GITHUB REPO <span>↗</span></a>
                 </div>
 
                 <!-- Simple Card 2 -->
-                <div class="bg-white p-8 rounded-2xl border border-gray-100 hover:border-blue-600 transition group">
-                    <h5 class="font-900 text-lg mb-2">Sentiment NLP</h5>
-                    <p class="text-xs text-gray-500 font-bold uppercase mb-4 tracking-widest italic text-blue-600">NLP / Naive Bayes</p>
+                <div class="reveal small-card">
+                    <div class="flex justify-between items-start mb-2">
+                        <h5 class="font-900 text-lg">Sentiment NLP</h5>
+                        
+                    </div>
+                    <p class="mono text-xs text-gray-500 font-bold uppercase mb-4 tracking-widest text-blue-600">NLP / Naive Bayes</p>
                     <p class="text-sm text-gray-600 mb-6 font-medium">Text classification for IMDB movie reviews identifying user sentiment.</p>
-                    <a href="https://github.com/yogithaprasad/Movie-review-sentiment-analysis" target="_blank" class="text-xs font-black border-b-2 border-black pb-1 group-hover:text-blue-600 group-hover:border-blue-600">GITHUB REPO</a>
+                    <a href="https://github.com/yogithaprasad/Movie-review-sentiment-analysis" target="_blank" rel="noopener noreferrer" class="repo-link">GITHUB REPO <span>↗</span></a>
                 </div>
 
                 <!-- Simple Card 3 -->
-                <div class="bg-white p-8 rounded-2xl border border-gray-100 hover:border-blue-600 transition group">
-                    <h5 class="font-900 text-lg mb-2">Lung Cancer Prediction</h5>
-                    <p class="text-xs text-gray-500 font-bold uppercase mb-4 tracking-widest italic text-blue-600">ML Benchmark</p>
+                <div class="reveal small-card">
+                    <div class="flex justify-between items-start mb-2">
+                        <h5 class="font-900 text-lg">Lung Cancer Prediction</h5>
+                        
+                    </div>
+                    <p class="mono text-xs text-gray-500 font-bold uppercase mb-4 tracking-widest text-blue-600">ML Benchmark</p>
                     <p class="text-sm text-gray-600 mb-6 font-medium">Comparative study of 5 ML classifiers for medical diagnosis.</p>
-                    <a href="https://github.com/yogithaprasad/Comparative-Analysis-of-ML-Algorithms-for-Predicting-Lung-Cancer" target="_blank" class="text-xs font-black border-b-2 border-black pb-1 group-hover:text-blue-600 group-hover:border-blue-600">GITHUB REPO</a>
+                    <a href="https://github.com/yogithaprasad/Comparative-Analysis-of-ML-Algorithms-for-Predicting-Lung-Cancer" target="_blank" rel="noopener noreferrer" class="repo-link">GITHUB REPO <span>↗</span></a>
                 </div>
+            </div>
+
+            <div class="reveal mt-14 text-center">
+                <a href="https://github.com/yogithaprasad?tab=repositories" target="_blank" rel="noopener noreferrer"
+                   class="mono inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-gray-500 hover:text-blue-600 transition">
+                    <svg class="inline-svg-icon " width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.15em"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><path d="M6 8.5v7"/><path d="M18 8.5a6 6 0 0 1-6 6"/></svg> Explore the full repository archive <svg class="inline-svg-icon " width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.15em"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="py-32 border-t border-gray-100 text-center">
-        <h3 class="text-4xl font-900 mb-12 tracking-tighter">Ready to build something <br><span class="text-blue-600 underline">impactful?</span></h3>
-        <div class="flex justify-center space-x-12 mb-16">
-            <a href="mailto:yogithaprasad5@gmail.com" class="text-4xl hover:text-blue-600 transition"><i class="fa-solid fa-envelope"></i></a>
-            <a href="https://linkedin.com/in/yogitha-prasad-2a96b9263/" class="text-4xl hover:text-blue-600 transition"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="https://github.com/yogithaprasad" class="text-4xl hover:text-blue-600 transition"><i class="fa-brands fa-github"></i></a>
-        </div>
-        <p class="text-gray-400 font-black text-xs uppercase tracking-[0.3em]">© 2024 Yogitha Prasad | Analytics Portfolio</p>
-    </footer>
+    <!-- LEETCODE / PROBLEM SOLVING -->
+    <section id="lc" class="section">
+        <div class="container">
+            <div class="reveal section-head">
+                <h3 class="text-4xl font-900 uppercase tracking-tighter mb-2 italic">03. Problem Solving</h3>
+                <p class="text-gray-400 font-bold uppercase tracking-widest text-sm mono">Data Structures & Algorithms</p>
+            </div>
 
+            <div class="reveal leetcode-card">
+      <div>
+        <div class="section-kicker" style="color:#fbbf24">03 · Problem Solving</div>
+        <h4>Daily reps on LeetCode</h4>
+        <p>Sharpening core DSA fundamentals — arrays, SQL, and algorithmic thinking — the same muscle that keeps queries and pipelines fast under pressure.</p>
+      </div>
+      <a href="https://leetcode.com/u/yogithaprasad/" target="_blank" rel="noopener noreferrer" class="leetcode-btn">View profile ↗</a>
+    </div>
+  </div>
+</section>
+<footer class="footer">
+  <div class="container">
+    <h3 class="reveal">Let's build something<br><span>impactful.</span></h3>
+    <div class="reveal socials">
+      <a href="mailto:yogithaprasad5@gmail.com" class="social" aria-label="Email">✉</a>
+      <a href="https://www.linkedin.com/in/yogitha-prasad-2a96b9263/" target="_blank" rel="noopener noreferrer" class="social" aria-label="LinkedIn">in</a>
+      <a href="https://github.com/yogithaprasad" target="_blank" rel="noopener noreferrer" class="social" aria-label="GitHub">◉</a>
+      <a href="https://leetcode.com/u/yogithaprasad/" target="_blank" rel="noopener noreferrer" class="social" aria-label="LeetCode">⌘</a>
+    </div>
+    <a href="mailto:yogithaprasad5@gmail.com" class="email">yogithaprasad5@gmail.com</a>
+    <p class="copyright">© 2026 Yogitha Prasad · Analytics Portfolio</p>
+  </div>
+</footer>
+<script>
+const revealEls = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+revealEls.forEach(el => observer.observe(el));
+
+const words = ["decisions.", "dashboards.", "pipelines.", "answers."];
+const typeEl = document.getElementById("typewriter");
+let wordIndex = 0, charIndex = 0, deleting = false;
+
+function typeLoop(){
+  const word = words[wordIndex];
+  typeEl.textContent = word.slice(0, charIndex);
+  if (!deleting) {
+    charIndex++;
+    if (charIndex > word.length) {
+      deleting = true;
+      setTimeout(typeLoop, 1300);
+      return;
+    }
+  } else {
+    charIndex--;
+    if (charIndex < 0) {
+      charIndex = 0;
+      deleting = false;
+      wordIndex = (wordIndex + 1) % words.length;
+    }
+  }
+  setTimeout(typeLoop, deleting ? 42 : 70);
+}
+typeLoop();
+
+document.querySelectorAll('.project-card').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const r = card.getBoundingClientRect();
+    card.style.setProperty('--mx', `${e.clientX-r.left}px`);
+    card.style.setProperty('--my', `${e.clientY-r.top}px`);
+  });
+});
+</script>
 </body>
 </html>
