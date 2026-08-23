@@ -3,112 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yogitha Prasad | Data Analyst Portfolio</title>
+    <title>Yogitha Prasad | Data Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        .project-card:hover { transform: translateY(-5px); transition: 0.3s; }
-        body { color: #000000; }
+        body { color: #000000; scroll-behavior: smooth; }
+        .project-card { border: 1px solid #e5e7eb; transition: 0.3s; }
+        .project-card:hover { border-color: #3b82f6; transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
     </style>
 </head>
-<body class="bg-white font-sans">
+<body class="bg-white">
 
-    <!-- Navigation -->
-    <nav class="p-6 border-b border-gray-100 flex justify-between items-center sticky top-0 bg-white z-50">
-        <h1 class="text-2xl font-bold tracking-tighter">YOGITHA PRASAD</h1>
-        <div class="space-x-6 font-medium">
-            <a href="#projects" class="hover:text-blue-600">Projects</a>
-            <a href="#about" class="hover:text-blue-600">About</a>
-            <a href="PASTE_RESUME_LINK_HERE" target="_blank" class="bg-black text-white px-4 py-2 rounded-lg">Resume</a>
+    <!-- Header / Nav -->
+    <nav class="sticky top-0 bg-white border-b border-gray-100 z-50 px-6 py-4 flex justify-between items-center">
+        <h1 class="text-xl font-black tracking-tighter">YOGITHA PRASAD</h1>
+        <div class="hidden md:flex space-x-8 font-bold text-sm uppercase">
+            <a href="#da-projects" class="hover:text-blue-600">Data Analytics</a>
+            <a href="#ml-projects" class="hover:text-blue-600">AI & ML</a>
+            <a href="https://linkedin.com/in/yogitha-prasad-2a96b9263/" target="_blank" class="hover:text-blue-600">LinkedIn</a>
+            <a href="https://github.com/yogithaprasad" target="_blank" class="hover:text-blue-600 text-blue-600">GitHub</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <header class="py-20 px-6 text-center">
-        <h2 class="text-5xl font-extrabold mb-4">Data Analyst & Analytics Engineer</h2>
-        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-            Transforming raw data into executive insights using <span class="text-black font-bold border-b-2 border-blue-500">Python, SQL, and Power BI.</span>
+    <section class="py-24 px-6 text-center border-b border-gray-50">
+        <h2 class="text-6xl font-black mb-6 tracking-tight">Full-Stack Data Analyst & <br><span class="text-blue-600">AI Engineer</span></h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto font-medium leading-relaxed">
+            Specializing in turning raw data into executive-level insights. Expert in <span class="text-black font-bold">SQL Engineering, Power BI Dashboards, and Predictive Machine Learning.</span>
         </p>
-    </header>
+    </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-16 px-6 bg-gray-50">
+    <!-- SECTION 1: DATA ANALYTICS (Featured) -->
+    <section id="da-projects" class="py-20 px-6 bg-gray-50">
         <div class="max-w-6xl mx-auto">
-            <h3 class="text-3xl font-black mb-12 uppercase tracking-widest text-center">Featured Projects</h3>
+            <div class="flex items-center space-x-4 mb-12">
+                <h3 class="text-3xl font-black uppercase">Executive Data Analytics</h3>
+                <div class="h-1 flex-grow bg-blue-600"></div>
+            </div>
             
-            <div class="grid md:grid-cols-2 gap-10">
-                
+            <div class="grid md:grid-cols-2 gap-8">
                 <!-- Project 1 -->
-                <div class="project-card bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
-                    <div class="flex justify-between items-start mb-4">
-                        <i class="fa-solid fa-chart-line text-3xl text-blue-600"></i>
-                        <span class="text-xs font-bold bg-blue-100 text-blue-700 px-3 py-1 rounded-full">POWER BI + DAX</span>
-                    </div>
-                    <h4 class="text-xl font-bold mb-2">Executive Sales Performance Dashboard</h4>
-                    <p class="text-gray-600 mb-6 font-medium">Built a professional BI tool to track $2M+ sales. Engineered DAX measures for YoY Growth and Profit Margin tracking.</p>
-                    <a href="https://github.com/yogithaprasad/Executive-Sales-Performance-BI" class="font-bold border-b-2 border-black hover:text-blue-600 hover:border-blue-600">View Project →</a>
+                <div class="project-card bg-white p-8 rounded-xl">
+                    <span class="text-xs font-black text-blue-600 uppercase tracking-widest">Power BI + DAX</span>
+                    <h4 class="text-2xl font-bold mt-2 mb-3">Executive Sales Performance</h4>
+                    <p class="text-gray-700 mb-6 font-medium">Built a CEO-level dashboard tracking $2M+ sales. Engineered custom DAX for YoY Growth and dynamic profit margin analysis.</p>
+                    <a href="https://github.com/yogithaprasad/Executive-Sales-Performance-BI" class="inline-block font-black border-b-2 border-black hover:text-blue-600 hover:border-blue-600">Case Study →</a>
                 </div>
 
                 <!-- Project 2 -->
-                <div class="project-card bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
-                    <div class="flex justify-between items-start mb-4">
-                        <i class="fa-solid fa-database text-3xl text-green-600"></i>
-                        <span class="text-xs font-bold bg-green-100 text-green-700 px-3 py-1 rounded-full">SQL (MySQL)</span>
-                    </div>
-                    <h4 class="text-xl font-bold mb-2">Nashville Housing Data Engineering</h4>
-                    <p class="text-gray-600 mb-6 font-medium">Cleaned 56,000 property records using CTEs and Self-Joins to resolve address gaps and duplicates.</p>
-                    <a href="https://github.com/yogithaprasad/Nashville-Housing-Data-Cleaning-SQL" class="font-bold border-b-2 border-black hover:text-blue-600 hover:border-blue-600">View Project →</a>
+                <div class="project-card bg-white p-8 rounded-xl">
+                    <span class="text-xs font-black text-green-600 uppercase tracking-widest">Advanced SQL</span>
+                    <h4 class="text-2xl font-bold mt-2 mb-3">Nashville Housing Engineering</h4>
+                    <p class="text-gray-700 mb-6 font-medium">Data cleaning of 56,000 records. Used CTEs, Self-Joins, and Window Functions to transform messy strings into atomic relational data.</p>
+                    <a href="https://github.com/yogithaprasad/Nashville-Housing-Data-Cleaning-SQL" class="inline-block font-black border-b-2 border-black hover:text-blue-600 hover:border-blue-600">SQL Logic →</a>
                 </div>
 
                 <!-- Project 3 -->
-                <div class="project-card bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
-                    <div class="flex justify-between items-start mb-4">
-                        <i class="fa-brands fa-python text-3xl text-yellow-500"></i>
-                        <span class="text-xs font-bold bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full">PYTHON + SQL</span>
-                    </div>
-                    <h4 class="text-xl font-bold mb-2">Retail Customer Insight Pipeline</h4>
-                    <p class="text-gray-600 mb-6 font-medium">End-to-end pipeline analyzing shopper behavior. Features automated cleaning and demographic segment modeling.</p>
-                    <a href="https://github.com/yogithaprasad/Retail-Customer-Behavior-Analysis" class="font-bold border-b-2 border-black hover:text-blue-600 hover:border-blue-600">View Project →</a>
+                <div class="project-card bg-white p-8 rounded-xl">
+                    <span class="text-xs font-black text-yellow-600 uppercase tracking-widest">Python + MySQL</span>
+                    <h4 class="text-2xl font-bold mt-2 mb-3">Retail Customer Insight Pipeline</h4>
+                    <p class="text-gray-700 mb-6 font-medium">Automated pipeline for retail trend analysis. Features median-imputation for missing data and demographic spend segmentation.</p>
+                    <a href="https://github.com/yogithaprasad/Retail-Customer-Behavior-Analysis" class="inline-block font-black border-b-2 border-black hover:text-blue-600 hover:border-blue-600">View Pipeline →</a>
                 </div>
 
                 <!-- Project 4 -->
-                <div class="project-card bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
-                    <div class="flex justify-between items-start mb-4">
-                        <i class="fa-solid fa-flask text-3xl text-purple-600"></i>
-                        <span class="text-xs font-bold bg-purple-100 text-purple-700 px-3 py-1 rounded-full">STATISTICS</span>
-                    </div>
-                    <h4 class="text-xl font-bold mb-2">Ecommerce A/B Test Analysis</h4>
-                    <p class="text-gray-600 mb-6 font-medium">Statistical evaluation of landing page conversion rates using Z-tests and Logistic Regression models.</p>
-                    <a href="https://github.com/yogithaprasad/Ecommerce-AB-Testing-Regression" class="font-bold border-b-2 border-black hover:text-blue-600 hover:border-blue-600">View Project →</a>
+                <div class="project-card bg-white p-8 rounded-xl">
+                    <span class="text-xs font-black text-purple-600 uppercase tracking-widest">Statistics</span>
+                    <h4 class="text-2xl font-bold mt-2 mb-3">Ecommerce A/B Testing</h4>
+                    <p class="text-gray-700 mb-6 font-medium">Statistical evaluation of 290k users. Implemented Z-tests and Logistic Regression to determine design conversion lift.</p>
+                    <a href="https://github.com/yogithaprasad/Ecommerce-AB-Testing-Regression" class="inline-block font-black border-b-2 border-black hover:text-blue-600 hover:border-blue-600">View Math →</a>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section class="py-16 px-6 border-t border-gray-100">
-        <div class="max-w-4xl mx-auto text-center">
-            <h3 class="text-sm font-bold uppercase tracking-widest text-gray-400 mb-8">Technical Stack</h3>
-            <div class="flex flex-wrap justify-center gap-8 text-3xl text-gray-800">
-                <i class="fa-brands fa-python" title="Python"></i>
-                <i class="fa-solid fa-database" title="SQL"></i>
-                <i class="fa-solid fa-chart-pie" title="Power BI"></i>
-                <i class="fa-solid fa-file-excel" title="Excel"></i>
-                <i class="fa-brands fa-git-alt" title="Git"></i>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="py-12 px-6 text-center border-t border-gray-100">
-        <p class="font-bold mb-4">Let's connect</p>
-        <div class="flex justify-center space-x-6 text-2xl">
-            <a href="https://github.com/yogithaprasad" class="hover:text-blue-600"><i class="fa-brands fa-github"></i></a>
-            <a href="https://linkedin.com/in/yourlink" class="hover:text-blue-600"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="mailto:yogithaprasad5@gmail.com" class="hover:text-blue-600"><i class="fa-solid fa-envelope"></i></a>
-        </div>
-    </footer>
-
-</body>
-</html>
+    <!-- SECTION 2: AI & ML PROJECTS -->
+    <section id="ml-projects" class="py-20 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex items-center space-x-4 mb-12">
+                <h3 class="text-3xl font-black uppercase text-gray-400">AI, ML & Extra Projects</h3>
+                <div class="h-1 flex-grow bg-gray-20
